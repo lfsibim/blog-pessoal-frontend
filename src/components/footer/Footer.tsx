@@ -1,10 +1,11 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 function Footer() {
 
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario } = useContext(AuthContext)
 
   let footerComponent
 
@@ -18,9 +19,9 @@ function Footer() {
             <p className='text-xl font-bold'>Blog pessoal Generation | Copyright: {data}</p>
             <p className='text-lg'>Acesse nossas redes sociais</p>
             <div className='flex gap-2'>
-              <LinkedinLogo size={48} weight='bold' />
-              <InstagramLogo size={48} weight='bold' />
-              <FacebookLogo size={48} weight='bold' />
+              <Link to='//linkedin.com' target='_blank'><LinkedinLogo size={48} weight='bold'></LinkedinLogo></Link>
+              <Link to='//instagram.com' target='_blank'><InstagramLogo size={48} weight='bold'></InstagramLogo></Link>
+              <Link to='//facebook.com' target='_blank'><FacebookLogo size={48} weight='bold'></FacebookLogo></Link>
             </div>
           </div>
         </div>
